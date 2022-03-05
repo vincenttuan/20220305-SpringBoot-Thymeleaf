@@ -43,13 +43,25 @@
 		</tr>
 	</table>
 	Users
+	<table border="1" width="50%">
+		<tr>
+			<th>Name</th><th>Age</th>
+		</tr>
+		<tr th:each="entry : ${users}">
+			<td th:each="x : ${entry}">
+				[[${x.value}]]
+			</td>
+		</tr>
+	</table>
+	Users
+	<table border="1" width="50%">
+		<tr>
+			<th>Name</th><th>Age</th>
+		</tr>
+		<tr th:each="entry : ${users}">
+			<td th:text="${entry.name}"></td>
+			<td th:text="${entry.age}"></td>
+		</tr>
+	</table>
 </body>
 </html>
-
-
-
-
-
-
-
-
