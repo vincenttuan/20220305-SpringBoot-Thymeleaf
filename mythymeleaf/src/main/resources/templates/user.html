@@ -36,7 +36,10 @@
 				<label for="name">體重</label>
 				<span class="fieldError" th:if="${#fields.hasErrors('*{weight}')}" th:errors="*{weight}"></span>
 				<input type="number" th:field="*{weight}" id="weight" class="form-control" />
-				
+			</div>
+			<input type="submit" th:value="${_method}" class="btn btn-primary" >
+			<div th:each="err : ${#fields.errors('*')}">
+				<span th:text="${err}" class="fieldError"></span>
 			</div>
 		</form>
 		<h1>User List</h1>
