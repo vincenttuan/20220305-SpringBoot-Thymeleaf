@@ -43,6 +43,38 @@
 			</div>
 		</form>
 		<h1>User List</h1>
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>索引</th>
+					<th>ID</th>
+					<th>姓名</th>
+					<th>密碼</th>
+					<th>生日</th>
+					<th>身高</th>
+					<th>體重</th>
+					<th>編輯</th>
+					<th>刪除</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user, stat : ${users}">
+					<td th:text="${stat.index}"></td>
+					<td th:text="${user.id}"></td>
+					<td th:text="${user.name}"></td>
+					<td th:text="${user.password}"></td>
+					<td th:text="${user.birth}"></td>
+					<td th:text="${user.height}"></td>
+					<td th:text="${user.weight}"></td>
+					<td>
+						<a href="#" th:href="@{/user/{id}(id=${user.id})}" class="btn btn-info" >編輯</a>
+					</td>
+					<td>
+						<a href="#" th:href="@{/user/delete/{id}(id=${user.id})}" class="btn btn-danger">刪除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>
