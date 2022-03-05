@@ -87,7 +87,7 @@ public class UserController {
 			user.setPassword(String.format("%04d", random.nextInt(10000))); // 0000~9999
 			user.setBirth(faker.date().birthday());
 			user.setHeight(random.nextInt(51) + 150);
-			user.setWeigth(random.nextInt(20) + (int)((user.getHeight()-80) * 0.7));
+			user.setWeight(random.nextInt(20) + (int)((user.getHeight()-80) * 0.7));
 			userRepository.save(user);
 		}
 		return "Add Sample Data OK";

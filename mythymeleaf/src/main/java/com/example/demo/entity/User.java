@@ -49,7 +49,7 @@ public class User {
 	@Column
 	@NotNull(message = "{user.weight.null}")
 	@Range(min = 1, max = 400, message = "{user.weight.range}")
-	private Integer weigth;
+	private Integer weight;
 
 	public Long getId() {
 		return id;
@@ -91,18 +91,14 @@ public class User {
 		this.height = height;
 	}
 
-	public Integer getWeigth() {
-		return weigth;
+	public Integer getWeight() {
+		return weight;
 	}
 
-	public void setWeigth(Integer weigth) {
-		this.weigth = weigth;
+	public void setWeight(Integer weight) {
+		this.weight = weight;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + ", birth=" + birth + ", height="
-				+ height + ", weigth=" + weigth + "]";
-	}
+	
 	
 }
